@@ -1,0 +1,26 @@
+---
+title: Student Curated Biographies
+permalink: /mujeres.html 
+layout: page
+---
+
+<h2>Student Curated Biographies</h2>
+
+<p>CPMR relies on the brilliance and motivation of many dedicated undergraduate students to preserve, identify, and create new content related to our holdings. These biographies reflect over 5 years' work by students whom have participated via classes, independent studies, and research seminars. Students are entirely responsible for the creation of these biographies and each biography is an ever-expanding, previously unavailable record of knowledge. Please contact us at chicanapormiraza@gmail.com with any concerns or updates to the information displayed here.</p>
+
+{% for m in site.mujeres %}
+<div class="row border-top mb-3">
+    <div class="col-md-2 p-3">
+        <img class="w-100" src="{{ m.image_thumb }}" alt="portrait of {{ m.title }}">
+    </div>
+    <div class="col-md-4 p-3">
+        <h3><a href="{{ m.url | relative_url }}">{{ m.title }}</a></h3>
+        <blockquote class="blockquote">
+            <p>{{ m.quote }}</p>
+        </blockquote>
+    </div>
+    <div class="col-md-6 p-3">
+        <p>{{ m.description }}</p>
+    </div>
+</div>
+{% endfor %}

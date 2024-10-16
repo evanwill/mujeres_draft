@@ -1,0 +1,31 @@
+---
+# base layout for mujeres pages 
+layout: page
+# item-meta adds rich meta markup to the page on production build
+item-meta: true
+---
+
+<ol class="breadcrumb mb-3">
+    <li class="breadcrumb-item"><a class="text-dark" href="{{ '/' | relative_url }}">Home</a></li>
+    <li class="breadcrumb-item"><a class="text-dark" href="{{ '/mujeres.html' | relative_url }}">Mujeres</a></li>
+    <li class="breadcrumb-item active text-dark" aria-current="page">{{ page.title }}</li>
+</ol>
+
+<div class="row">
+    <div class="col-md-4 px-4">
+        <img class="w-100" src="{{ page.image_small }}" alt="portrait of {{ page.title }}">
+    </div>
+    <div class="col-md-8">
+        <h2>{{ page.title }}</h2>
+        {% if page.born %}<p><small>Born: {{ page.born }}</small></p>{% endif %}
+        {% if page.education %}<p><small>Education: {{ page.education }}</small></p>{% endif %}
+        {% if page.bio_detail %}<p><small>{{ page.bio_detail }}</small></p>{% endif %}
+        {% if page.quote %}<blockquote class="blockquote"><p>"{{ page.quote }}"</p></blockquote>{% endif %}
+    </div>
+    <div class="col-12 p-4">
+
+        {{ page.page_body }}
+
+    </div>
+
+</div>
